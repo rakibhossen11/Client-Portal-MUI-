@@ -7,16 +7,19 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const columns = [
-    { id: 'name', label: 'Name', minWidth: 170 },
+    { id: 'firstName', label: 'Name', minWidth: 170 },
     { id: 'email', label: 'Email', minWidth: 170 },
     { id: 'address', label: 'Address', minWidth: 170 },
     { id: 'phone', label: 'Phone', minWidth: 170 },
-    { id: 'birthdate', label: 'Birth', minWidth: 100 },
-    { id: 'username', label: 'User', minWidth: 100 },
-    { id: 'password', label: 'Password', minWidth: 100 },  
-    { id: 'payment', label: 'Payment', minWidth: 100 },  
+    { id: 'role', label: 'Role', minWidth: 80 },
+    // { id: 'birthdate', label: 'Birth', minWidth: 100 },
+    // { id: 'username', label: 'User', minWidth: 100 },
+    // { id: 'password', label: 'Password', minWidth: 100 },  
+    // { id: 'payment', label: 'Payment', minWidth: 100 },  
   ];
 
 //   function createData(name, code, population, size) {
@@ -27,16 +30,16 @@ const columns = [
     return { name, email, address, phone, birthdate, username, password, payment };
   }
   
-  const rows = [
-    createData('Rakib Hossen', 'rakibhossen1660@gmail.com', 'Hobirbari', 1966366745, '17/10/2003', 'rakib_hossen', 'rakib009', 999),
-    createData('Sakib Hossen', 'rakibhossen1660@gmail.com', 'Hobirbari', 1966366745, '17/10/2003', 'rakib_hossen', 'rakib009', 999),
-    createData('Kawsar Hossen', 'rakibhossen1660@gmail.com', 'Hobirbari', 1966366745, '17/10/2003', 'rakib_hossen', 'rakib009', 999),
-    createData('Joynal Hossen', 'rakibhossen1660@gmail.com', 'Hobirbari', 1966366745, '17/10/2003', 'rakib_hossen', 'rakib009', 999),
-  ];
+  const rows = [];
 
 const Customers = () => {
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const customers = useLoaderData();
+    console.log(customers);
+    const [customer,setCustomer] = useState(customers);
+
+
   
     const handleChangePage = (event, newPage) => {
       setPage(newPage);
@@ -65,7 +68,7 @@ const Customers = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows
+              {customer
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => {
                   return (
