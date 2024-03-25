@@ -1,52 +1,18 @@
 import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
-// TODO remove, this demo shouldn't need to reset the theme.
-
-const defaultTheme = createTheme();
+import { Button, Select, Label, TextInput } from "flowbite-react";
 
 const RegisterForm = () => {
-  const handleSubmit = (event) => {
+  const handlesubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // const from = event.target;
-    const firstName = data.get("firstName");
-    const lastName = data.get("lastName");
-    const phone = data.get("phone");
-    const address = data.get("address");
-    const email = data.get("email");
-    const password = data.get("password");
-    const user = {firstName,lastName,phone,address,email,password};
+
+    const form = event.target;
+    const name = form.name.value;
+    const phone = form.phone.value;
+    const address = form.address.value;
+    const profession = form.passion.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const user = { name, phone, address, profession, email, password };
     console.log(user);
     fetch("http://localhost:5000/user", {
       method: "POST",
@@ -58,156 +24,76 @@ const RegisterForm = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-      })
+      });
   };
 
-  // const handlesubmit = (event) =>{
-  //     event.preventDefault();
-  //     const form = event.target;
-  //     const name = form.name.value;
-  //     console.log(name);
-  //     const newCoffee = {
-  //       name,
-  //     };
-  //     console.log(newCoffee);
-  
-  //     // send data to the server
-  //     fetch("http://localhost:5000/user", {
-  //       method: "POST",
-  //       headers: {
-  //         "content-type": "application/json",
-  //       },
-  //       body: JSON.stringify(newCoffee),
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         console.log(data);
-  //       });
-  // }
-
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="phone"
-                  label="Phone Number"
-                  name="phone"
-                  type="number"
-                  autoComplete="phone"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="address"
-                  label="Address"
-                  name="address"
-                  autoComplete="address"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={
-                    <Checkbox value="allowExtraEmails" color="primary" />
-                  }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign Up
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-        <Copyright sx={{ mt: 5 }} />
-      </Container>
-    </ThemeProvider>
-    // <div>
-    //   <form onSubmit={handlesubmit}>
-    //     <input type="text" name="name" id="" />
-    //     <input type="submit" name="submit" id="" />
-    //   </form>
-    // </div>
+    <div className="flex items-center justify-center mt-[40px]">
+      <form onSubmit={handlesubmit} className="flex w-full max-w-md font-signika flex-col gap-4">
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="name" value="Your Name" />
+          </div>
+          <TextInput id="name" type="text" placeholder="name" required />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="email" value="Your Phone" />
+          </div>
+          <TextInput
+            id="phone"
+            type="number"
+            placeholder="your phone number"
+            required
+          />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="address" value="Your address" />
+          </div>
+          <TextInput
+            id="address"
+            type="text"
+            placeholder="your address"
+            required
+          />
+        </div>
+        <div className="max-w-md">
+          <div className="mb-2 block">
+            <Label htmlFor="passion" value="Select your passion" />
+          </div>
+          <Select id="passion" required>
+            <option>Doctor</option>
+            <option>Engineer</option>
+            <option>Student</option>
+            <option>Business</option>
+          </Select>
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="email" value="Your email" />
+          </div>
+          <TextInput
+            id="email"
+            type="email"
+            placeholder="email@work.com"
+            required
+          />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="password1" value="Your password" />
+          </div>
+          <TextInput
+            id="password"
+            placeholder="password"
+            type="password"
+            required
+          />
+        </div>
+        <Button className="mt-[10px]" type="submit">Register</Button>
+      </form>
+    </div>
   );
 };
 
