@@ -1,37 +1,148 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import * as React from "react";
+import { Card } from "flowbite-react";
 
 const CardItem = () => {
-  
-    return (
-        <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Mern stack web development of Rakib Hossen
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo facere veritatis laborum corporis dicta minima cumque tenetur provident culpa dolorem nesciunt necessitatibus, quia, praesentium magni labore illum repudiandae in saepe aut incidunt. Corrupti sed fugit laudantium. Eum officia unde blanditiis aut, quo non eos provident magni atque? Aliquam, doloribus quam et iusto enim ab laborum dolor, perspiciatis nesciunt nemo perferendis!
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Enroll Now
-          </Button>
-        </CardActions>
-      </Card>
-    );
-  };
+  return (
+    <Card className="max-w-sm">
+      <h5 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">
+        Standard plan
+      </h5>
+      <div className="flex items-baseline text-gray-900 dark:text-white">
+        <span className="text-3xl font-semibold">$</span>
+        <span className="text-5xl font-extrabold tracking-tight">49</span>
+        <span className="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">
+          /month
+        </span>
+      </div>
+      <ul className="my-7 space-y-5">
+        <li className="flex space-x-3">
+          <svg
+            className="h-5 w-5 shrink-0 text-cyan-600 dark:text-cyan-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+            2 team members
+          </span>
+        </li>
+        <li className="flex space-x-3">
+          <svg
+            className="h-5 w-5 shrink-0 text-cyan-600 dark:text-cyan-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+            20GB Cloud storage
+          </span>
+        </li>
+        <li className="flex space-x-3">
+          <svg
+            className="h-5 w-5 shrink-0 text-cyan-600 dark:text-cyan-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">
+            Integration help
+          </span>
+        </li>
+        <li className="flex space-x-3 line-through decoration-gray-500">
+          <svg
+            className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-base font-normal leading-tight text-gray-500">
+            Sketch Files
+          </span>
+        </li>
+        <li className="flex space-x-3 line-through decoration-gray-500">
+          <svg
+            className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-base font-normal leading-tight text-gray-500">
+            API Access
+          </span>
+        </li>
+        <li className="flex space-x-3 line-through decoration-gray-500">
+          <svg
+            className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-base font-normal leading-tight text-gray-500">
+            Complete documentation
+          </span>
+        </li>
+        <li className="flex space-x-3 line-through decoration-gray-500">
+          <svg
+            className="h-5 w-5 shrink-0 text-gray-400 dark:text-gray-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-base font-normal leading-tight text-gray-500">
+            24×7 phone & email support
+          </span>
+        </li>
+      </ul>
+      <button
+        type="button"
+        className="inline-flex w-full justify-center rounded-lg bg-cyan-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-700 focus:outline-none focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-900"
+      >
+        Choose plan
+      </button>
+    </Card>
+  );
+};
 
 export default CardItem;

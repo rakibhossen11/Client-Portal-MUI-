@@ -1,15 +1,12 @@
 import React from "react";
 import CardItem from "../components/Card";
-import Alert from "@mui/material/Alert";
-import CheckIcon from "@mui/icons-material/Check";
+import Service from "./service/Service";
 
 const Home = () => {
   return (
     <div>
-      <CardItem />
-      <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
-        Here is a gentle confirmation that your action was successful.
-      </Alert>
+      {/* <CardItem /> */}
+      <Service />
     </div>
   );
 };
