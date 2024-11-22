@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ServiceHeader from "./serviceComponents/ServiceHeader";
 import ServiceDetail from "./serviceComponents/ServiceDetail";
 import ServiceButton from "./serviceComponents/ServiceButton";
@@ -16,7 +16,9 @@ const ServiceDetails = () => {
         <div>
           <ServiceHeader header={serviceName} />
           <div className="flex gap-[10px]">
-            <ServiceButton text={"Order Now"} />
+            <Link to={`/service-order/${_id}`}>
+              <ServiceButton text={"Order Now"} />
+            </Link>
             <ServiceButton text={"Add To cart"} />
           </div>
         </div>

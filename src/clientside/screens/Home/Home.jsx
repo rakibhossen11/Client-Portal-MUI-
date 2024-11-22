@@ -1,6 +1,6 @@
 import React from "react";
-import CardItem from "../components/Card";
-import Service from "./service/Service";
+import CardItem from "../../components/Card";
+import Service from "../service/Service";
 
 const Home = () => {
   return (

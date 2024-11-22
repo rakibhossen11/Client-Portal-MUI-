@@ -4,7 +4,7 @@ import AdminDrawer from '../screens/Drawer';
 
 const Dashboard = () => {
   return (
-    <div className='max-w-[1240px] mx-auto'>
+    <div className='flex max-w-[1240px] mx-auto'>
       <AdminDrawer />
       <Outlet />
     </div>

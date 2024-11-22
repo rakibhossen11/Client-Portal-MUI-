@@ -37,7 +37,7 @@ const Customers = () => {
             <p>{customer.email}</p>
           </div>
         ))}
-        {/* {
+        {
           customers ? (customers.map((customer) => (
             <div key={customer._id}>
               <p>{customer.email}</p>
@@ -47,7 +47,7 @@ const Customers = () => {
               <p>{customer.email}</p>
             </div>
           )))
-        } */}
+        }
       </div>
     </div>
   );

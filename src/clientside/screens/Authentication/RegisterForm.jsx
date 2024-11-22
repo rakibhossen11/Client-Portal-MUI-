@@ -63,10 +63,9 @@ const RegisterForm = () => {
             <Label htmlFor="passion" value="Select your passion" />
           </div>
           <Select id="passion" required>
-            <option>Doctor</option>
-            <option>Engineer</option>
+            <option>Admin</option>
+            <option>Teacher</option>
             <option>Student</option>
-            <option>Business</option>
           </Select>
         </div>
         <div>
